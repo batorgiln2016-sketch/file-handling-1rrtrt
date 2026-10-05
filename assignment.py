@@ -29,8 +29,15 @@ def append_entry(filename, text):
     return len(lines)
 # Exercise 4
 def search_file(filename, word):
-    # Write your code here
-    pass
+    file = open(filename, "r")
+    lst = []
+    c=0
+    lines = file.readlines()
+    for line in lines:
+        c=c+1
+        if word in line.strip().lower():
+            lst.append(c)
+    return lst
 
 # Exercise 5
 def number_the_lines(source, destination):
