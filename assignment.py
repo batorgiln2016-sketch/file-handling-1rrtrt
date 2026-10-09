@@ -41,5 +41,13 @@ def search_file(filename, word):
 
 # Exercise 5
 def number_the_lines(source, destination):
-    # Write your code here
-    pass
+    file_in = open(source, "r")
+    file_out = open(destination, "w")
+    lines = file_in.readlines()
+    c = 0
+    for line in lines:
+        c = c + 1
+        file_out.write(str(c) + ": " + line)
+    file_in.close()
+    file_out.close()
+    return c
