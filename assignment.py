@@ -31,12 +31,13 @@ def append_entry(filename, text):
 def search_file(filename, word):
     file = open(filename, "r")
     lst = []
-    c=0
+    c = 0
     lines = file.readlines()
     for line in lines:
-        c=c+1
-        if word in line.strip().lower():
+        c = c + 1
+        if word.lower() in line.lower():
             lst.append(c)
+    file.close()
     return lst
 
 # Exercise 5
